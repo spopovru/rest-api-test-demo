@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.10.0'
+}
+
+group = 'local.home.demo'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    // Configuration
+    implementation 'org.aeonbits.owner:owner:1.0.12'
+    // Tests implementation
+    testImplementation 'org.testng:testng:7.8.0'
+    testImplementation 'io.rest-assured:rest-assured:5.3.2'
+    // Assertions
+    testImplementation 'org.assertj:assertj-core:3.24.2'
+    // Allure reporting
+    implementation 'io.qameta.allure:allure-testng:2.24.0'
+    implementation 'io.qameta.allure:allure-rest-assured:2.24.0'
+    testImplementation 'org.projectlombok:lombok:1.18.28'
+    // Lombok
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+    // Jackson
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.15.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.3'
+}
+
+test {
+    useTestNG()
+}
+
+allure {
+    version = "2.24.0"
+}

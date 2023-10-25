@@ -1,0 +1,911 @@
+{
+  "name": "API Tests",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "GET test",
+      "items": [
+        {
+          "type": "http",
+          "name": "GET with empty parameter",
+          "seq": 2,
+          "request": {
+            "url": "{{base_ur}}/get?foo=",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "zz0D7YXFaYFdRKERkxvi9"
+              },
+              {
+                "name": "res.body.args.foo",
+                "value": "",
+                "enabled": true,
+                "uid": "BZwLDVZcZb9JC8v2yx25D"
+              }
+            ],
+            "tests": "",
+            "query": [
+              {
+                "name": "foo",
+                "value": "",
+                "enabled": true
+              }
+            ]
+          }
+        },
+        {
+          "type": "http",
+          "name": "GET with parameter",
+          "seq": 1,
+          "request": {
+            "url": "{{base_ur}}/get?foo=bar",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "cUEp75JsWmzRI8iTH8D5S"
+              },
+              {
+                "name": "res.body.args.foo",
+                "value": "eq bar",
+                "enabled": true,
+                "uid": "qAVQScJISKxBxwUJf3Hj0"
+              }
+            ],
+            "tests": "",
+            "query": [
+              {
+                "name": "foo",
+                "value": "bar",
+                "enabled": true
+              }
+            ]
+          }
+        },
+        {
+          "type": "folder",
+          "name": "GET endpoint with incorrect method",
+          "items": [
+            {
+              "type": "http",
+              "name": "GET endpoint with incorrect method (DELETE)",
+              "seq": 4,
+              "request": {
+                "url": "{{base_ur}}/get",
+                "method": "DELETE",
+                "headers": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": []
+                },
+                "auth": {
+                  "mode": "none",
+                  "basic": {
+                    "username": "",
+                    "password": ""
+                  },
+                  "bearer": {
+                    "token": ""
+                  }
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [
+                  {
+                    "name": "res.status",
+                    "value": "eq 405",
+                    "enabled": true,
+                    "uid": "d5gzNI4qJXHGsnmBeGEMP"
+                  }
+                ],
+                "tests": "",
+                "query": []
+              }
+            },
+            {
+              "type": "http",
+              "name": "GET endpoint with incorrect method (PATCH)",
+              "seq": 3,
+              "request": {
+                "url": "{{base_ur}}/get",
+                "method": "PATCH",
+                "headers": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": []
+                },
+                "auth": {
+                  "mode": "none",
+                  "basic": {
+                    "username": "",
+                    "password": ""
+                  },
+                  "bearer": {
+                    "token": ""
+                  }
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [
+                  {
+                    "name": "res.status",
+                    "value": "eq 405",
+                    "enabled": true,
+                    "uid": "WWaLr3rqnGJKFOxtVdqpH"
+                  }
+                ],
+                "tests": "",
+                "query": []
+              }
+            },
+            {
+              "type": "http",
+              "name": "GET endpoint with incorrect method (POST)",
+              "seq": 1,
+              "request": {
+                "url": "{{base_ur}}/get",
+                "method": "POST",
+                "headers": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": []
+                },
+                "auth": {
+                  "mode": "none",
+                  "basic": {
+                    "username": "",
+                    "password": ""
+                  },
+                  "bearer": {
+                    "token": ""
+                  }
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [
+                  {
+                    "name": "res.status",
+                    "value": "eq 405",
+                    "enabled": true,
+                    "uid": "hOsasa8wIkN5X7q4SlCDr"
+                  }
+                ],
+                "tests": "",
+                "query": []
+              }
+            },
+            {
+              "type": "http",
+              "name": "GET endpoint with incorrect method (PUT)",
+              "seq": 2,
+              "request": {
+                "url": "{{base_ur}}/get",
+                "method": "PUT",
+                "headers": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": []
+                },
+                "auth": {
+                  "mode": "none",
+                  "basic": {
+                    "username": "",
+                    "password": ""
+                  },
+                  "bearer": {
+                    "token": ""
+                  }
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [
+                  {
+                    "name": "res.status",
+                    "value": "eq 405",
+                    "enabled": true,
+                    "uid": "lWoOIoEx1hkDFl2w2h1LF"
+                  }
+                ],
+                "tests": "",
+                "query": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "AUTH test",
+      "items": [
+        {
+          "type": "http",
+          "name": "AUTH basic unauthorised",
+          "seq": 4,
+          "request": {
+            "url": "{{base_ur}}/basic-auth/user/password",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "user",
+                "password": "password"
+              },
+              "bearer": {
+                "token": "foo"
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 401",
+                "enabled": true,
+                "uid": "jlFqcSsgp5KCwwdF3qs6E"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "AUTH basic",
+          "seq": 3,
+          "request": {
+            "url": "{{base_ur}}/basic-auth/user/password",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "basic",
+              "basic": {
+                "username": "user",
+                "password": "password"
+              },
+              "bearer": {
+                "token": "foo"
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "E0h3NKWhhe6rEtDapQ6ER"
+              },
+              {
+                "name": "res.body.authenticated",
+                "value": "eq true",
+                "enabled": true,
+                "uid": "RIY2h2huvGONmxnQcVNDb"
+              },
+              {
+                "name": "res.body.user",
+                "value": "eq user",
+                "enabled": true,
+                "uid": "uXW0BIwMhhpQgGHpg5ats"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "AUTH bearer unauthorised",
+          "seq": 2,
+          "request": {
+            "url": "{{base_ur}}/bearer",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": "foo"
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 401",
+                "enabled": true,
+                "uid": "Jy8bubYK95ggBnHy3hOE6"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "AUTH bearer",
+          "seq": 1,
+          "request": {
+            "url": "{{base_ur}}/bearer",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "bearer",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": "foo"
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "l7cNbEnjs9EXegkxByMcY"
+              },
+              {
+                "name": "res.body.authenticated",
+                "value": "eq true",
+                "enabled": true,
+                "uid": "XiHY8Y7fpjLr5Cr8E2t3N"
+              },
+              {
+                "name": "res.body.token",
+                "value": "eq foo",
+                "enabled": true,
+                "uid": "5Muk0h1IjVm3FXXyhp0GQ"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "POST test",
+      "items": [
+        {
+          "type": "http",
+          "name": "POST with JSON body",
+          "seq": 2,
+          "request": {
+            "url": "{{base_url}}/post",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"foo\": \"bar\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"POST with JSON body\", function() {\n    jsonData = JSON.parse(res.body.data);\n    expect(jsonData.foo).to.equal(\"bar\");\n  });",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "POST with multipart form data",
+          "seq": 3,
+          "request": {
+            "url": "{{base_url}}/post",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "formUrlEncoded",
+              "formUrlEncoded": [
+                {
+                  "name": "foo",
+                  "value": "bar",
+                  "enabled": true
+                }
+              ],
+              "multipartForm": [
+                {
+                  "name": "foo",
+                  "value": "bar",
+                  "enabled": true
+                }
+              ]
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"POST with multipart form data\", function() {\n    expect(res.body.form.foo).to.equal(\"bar\");\n  });",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "POST with text body",
+          "seq": 1,
+          "request": {
+            "url": "{{base_url}}/post",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "text",
+              "text": "foo",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "test(\"POST with text body\", function() {\n    expect(res.body.data).to.equal(\"foo\");\n  });",
+            "query": []
+          }
+        },
+        {
+          "type": "folder",
+          "name": "POST endpoint with incorrect method",
+          "items": [
+            {
+              "type": "http",
+              "name": "POST endpoint with incorrect method (DELETE)",
+              "seq": 4,
+              "request": {
+                "url": "{{base_url}}/post",
+                "method": "DELETE",
+                "headers": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": []
+                },
+                "auth": {
+                  "mode": "none",
+                  "basic": {
+                    "username": "",
+                    "password": ""
+                  },
+                  "bearer": {
+                    "token": ""
+                  }
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [
+                  {
+                    "name": "res.status",
+                    "value": "eq 405",
+                    "enabled": true,
+                    "uid": "7OhfkXACPfA7V8Ey2gyh2"
+                  }
+                ],
+                "tests": "",
+                "query": []
+              }
+            },
+            {
+              "type": "http",
+              "name": "POST endpoint with incorrect method (GET)",
+              "seq": 1,
+              "request": {
+                "url": "{{base_url}}/post",
+                "method": "GET",
+                "headers": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": []
+                },
+                "auth": {
+                  "mode": "none",
+                  "basic": {
+                    "username": "",
+                    "password": ""
+                  },
+                  "bearer": {
+                    "token": ""
+                  }
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [
+                  {
+                    "name": "res.status",
+                    "value": "eq 405",
+                    "enabled": true,
+                    "uid": "yYgoommEydu60Z4UocjmX"
+                  }
+                ],
+                "tests": "",
+                "query": []
+              }
+            },
+            {
+              "type": "http",
+              "name": "POST endpoint with incorrect method (PATCH)",
+              "seq": 3,
+              "request": {
+                "url": "{{base_url}}/post",
+                "method": "PATCH",
+                "headers": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": []
+                },
+                "auth": {
+                  "mode": "none",
+                  "basic": {
+                    "username": "",
+                    "password": ""
+                  },
+                  "bearer": {
+                    "token": ""
+                  }
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [
+                  {
+                    "name": "res.status",
+                    "value": "eq 405",
+                    "enabled": true,
+                    "uid": "tS5BDSsb22OPAczcqHyCz"
+                  }
+                ],
+                "tests": "",
+                "query": []
+              }
+            },
+            {
+              "type": "http",
+              "name": "POST endpoint with incorrect method (PUT)",
+              "seq": 2,
+              "request": {
+                "url": "{{base_url}}/post",
+                "method": "PUT",
+                "headers": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": []
+                },
+                "auth": {
+                  "mode": "none",
+                  "basic": {
+                    "username": "",
+                    "password": ""
+                  },
+                  "bearer": {
+                    "token": ""
+                  }
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [
+                  {
+                    "name": "res.status",
+                    "value": "eq 405",
+                    "enabled": true,
+                    "uid": "iICN3WmxS3J6GA5PGUBLe"
+                  }
+                ],
+                "tests": "",
+                "query": []
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Smoke test",
+      "items": [
+        {
+          "type": "http",
+          "name": "DELETE method smoke test",
+          "seq": 5,
+          "request": {
+            "url": "{{base_ur}}/delete",
+            "method": "DELETE",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "YbIYhqkS8YVZdGsQroKoK"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "GET method smoke test",
+          "seq": 1,
+          "request": {
+            "url": "{{base_ur}}/get",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "32H1b9oJ3aQjKws8Nq4y9"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "PATCH method smoke test",
+          "seq": 4,
+          "request": {
+            "url": "{{base_ur}}/patch",
+            "method": "PATCH",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "1mXxuWbQuYE91BgL2B8kT"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "POST method smoke test",
+          "seq": 2,
+          "request": {
+            "url": "{{base_ur}}/post",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "PPw5PvGnH69nbW3FG3wEN"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "PUT method smoke test",
+          "seq": 3,
+          "request": {
+            "url": "{{base_ur}}/put",
+            "method": "PUT",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [
+              {
+                "name": "res.status",
+                "value": "eq 200",
+                "enabled": true,
+                "uid": "43VwQuVIqEbrWWXyS6b48"
+              }
+            ],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
+    }
+  ],
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "base_url",
+          "value": "http://localhost",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "localhost"
+    }
+  ]
+}
